@@ -1,11 +1,8 @@
 #!/bin/bash
 # Program: 
-#        This program is used to extract website's root URLs from target page for further use. 
+#        This program is used to extract website's URLs from target page for further use. 
 # History:
 #        08/23/2013		Leo Bi		First release
-
-# my testing
-# sh extract_urls.sh -u https://raw.github.com/bml3i/pure-timer/master/test.html 
 
 # check environment variable first
 if [ -z "${ANTEATER_HOME}" ]; then 
@@ -43,9 +40,6 @@ if [ -z "${outputfilename}" ]; then
 else
   outputfile=${anteater_output_path}/${outputfilename}.out
 fi
-
-# backups
-# curl -s ${url} | grep "[http|https]://" | tr "'" '\n' | tr ' ><(),=?"|' '\n\n\n\n\n\n\n\n\n\n\n\n' | grep "[http|https]://www" | grep "${patternstring}" | sed 's/\([http|https]:\/\/[^\/]*\)\/.*/\1/' | sort -u >> ${outputfile}
 
 # grab domain URLs and write them to a file
 curl -s ${url} | grep "[http|https]://" | tr "'" '\n' | tr ' ><(),=?"|' '\n\n\n\n\n\n\n\n\n\n\n\n' | grep "[http|https]://www" | grep "${patternstring}" | sed 's/\([http|https]:\/\/[^\/]*\)\/.*/\1/' | sort -u >> ${outputfile}

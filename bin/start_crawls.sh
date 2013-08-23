@@ -1,15 +1,8 @@
 #!/bin/bash
 # Program: 
-#        This program is used to ....
+#        This program is used to crawl URLs from the initiative page. 
 # History:
 #        08/23/2013		Leo Bi		First release
-
-# my testing
-# sh start_crawls.sh -u www.baidu.com -t 2
-# sh start_crawls.sh -u http://www.jinan.gov.cn/ -t 1 -p gov -o mytest
-# sh start_crawls.sh -u http://www.jinan.gov.cn/ -t 2 -p gov -o mytest
-# sh start_crawls.sh -u https://raw.github.com/bml3i/pure-timer/master/test.html -t 1
-
 
 # check environment variable first
 if [ -z "${ANTEATER_HOME}" ]; then 
